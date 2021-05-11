@@ -65,6 +65,7 @@
 ### [Custom Visject Surfaces](editor/advanced/custom-visject-surface.md)
 ### [Editor Style](editor/advanced/style.md)
 ### [Custom Engine Build](editor/advanced/custom-engine.md)
+### [Troubleshooting](editor/advanced/troubleshooting.md)
 
 # [Graphics](graphics/index.md)
 ## [Rendering overview](graphics/overview/index.md)
