@@ -8,20 +8,22 @@ This page contains listings of commonplace (and less commonplace) issues related
 
 
 ### Symptoms:
-When attempting to build scene data, the Flax Editor crashes and displays an error message:
+When attempting to build scene data, Flax Editor crashes and displays an error message:
 
-![Crash Error Message](https://i.imgur.com/L1JnGYb.png)
+![Crash Error Message](https://i.imgur.com/40WoTUy.png)
 
 
 ### Causes:
-This is caused by a broken SM5 shader implementation in certain Intel Chipsets.\
-Essentially, the Intel graphics lies about supporting certain functionality, and then errors when DirectX calls those functions it lied about supporting. Thanks ~~Obama~~ *Intel*.
+This is caused by a broken [Shader Model 5](https://en.wikipedia.org/wiki/High-Level_Shading_Language) implementation in certain Intel Chipsets, related to Direct X 11.\
+Simply put, the Intel graphics lies about supporting certain DirectX 11 features, and then throws an error when anything tries using the features it pretended to support. This in turn crashes any application or game that doesn't specifically distrust Intel iGPUs.
 
 
-### Solutions & Workarounds
-It is possible to bypass the issue by forcing Flax Editor to run in DirectX 10 mode using [command line parameters](https://docs.flaxengine.com/manual/editor/advanced/command-line-access.html). This forces Flax to use SM4 and DirextX 10 compatibility, 
+### Solutions & Workarounds:
+It is possible to work around the issue by forcing Flax Editor to run in DirectX 10 mode using [command line parameters](https://docs.flaxengine.com/manual/editor/advanced/command-line-access.html).\
+This forces Flax Editor to use Shader Model 4 and thus bypasses the Intel SM5 issue entirely.
 
-Creating a BAT file or a shortcut to FlaxEditor.exe using the following parameters will force DX10:
+
+To do this, create a BAT file or a shortcut to FlaxEditor.exe using the following parameters:
 
 `FlaxEditor.exe -project "C:\Users\<Username>\Documents\Flax Projects\YourProject" -d3d10`
 
