@@ -14,8 +14,8 @@ When attempting to build scene data, Flax Editor crashes and displays an error m
 
 
 ### Causes:
-This is caused by a broken [Shader Model 5](https://en.wikipedia.org/wiki/High-Level_Shading_Language) implementation in certain Intel Chipsets, related to Direct X 11.\
-Simply put, the Intel graphics lies about supporting certain DirectX 11 features, and then throws an error when anything tries using the features it pretended to support. This in turn crashes any application or game that doesn't specifically distrust Intel iGPUs.
+This is caused by a broken Shader Model 5 implementation in certain Intel Chipsets, related to Direct X 11.\
+Simply put, the Intel graphics lies about supporting certain DirectX 11 features, and then throws an error when anything tries using the features it pretendes to support. This in turn crashes any application or game that doesn't specifically distrust Intel iGPUs.
 
 
 ### Solutions & Workarounds:
