@@ -19,22 +19,12 @@ Essentially, the Intel graphics lies about supporting certain functionality, and
 
 
 ### Solutions & Workarounds
-Depending on the age and model of your iGPU, it may be possible to bypass the issue by forcing Flax Editor to run in Vulkan or DirectX 10 mode using [command line parameters](https://docs.flaxengine.com/manual/editor/advanced/command-line-access.html).
+It is possible to bypass the issue by forcing Flax Editor to run in DirectX 10 mode using [command line parameters](https://docs.flaxengine.com/manual/editor/advanced/command-line-access.html). This forces Flax to use SM4 and DirextX 10 compatibility, 
+
+Creating a BAT file or a shortcut to FlaxEditor.exe using the following parameters will force DX10:
+
+`FlaxEditor.exe -project "C:\Users\<Username>\Documents\Flax Projects\YourProject" -d3d10`
 
 > **Note:**\
 > *Please keep in mind that the DirectX 10 backend isn't optimized,\
 > and might occasionally not support a given feature.*
-
-**Vulcan:**\
-`FlaxEditor.exe -project "C:\Users\<Username>\Documents\Flax Projects\MyProject" -vulkan`
-
-**DirectX 10:**\
-`FlaxEditor.exe -project "C:\Users\<Username>\Documents\Flax Projects\MyProject" -d3d10`
-
-
-> **Note:**\
-> If Vulkan is not supported by your hardware, Flax will transparently fall back onto DirectX 11 and you will experience the exact same issue. This can be confirmed by searching the log file for
-> `VK_ERROR_INITIALIZATION_FAILED`.
-> 
-> If this happens, please try DirectX 10 instead.
-
